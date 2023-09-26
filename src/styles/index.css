@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+table {
+  max-width: 1600px;
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 80%;
+  margin: 100px auto 50px;
+  border: 2px solid black;
+  background-color: azure;
+}
+
+thead tr {
+  background-color: darkcyan;
+  height: 50px;
+  color: azure;
+  font-size: 18px;
+}
+
+th, td {
+  border: 1px solid gray;
+}
+
+td {
+  padding: 10px;
+}
+
+td:hover {
+  background-color: rgb(247, 255, 212);
+}
+
+td.selected ~ td {
+  background-color: rgb(212, 109, 109);
+}
+
+td.selected {
+  background-color: rgb(212, 109, 109);
+}
+
+button {
+  box-sizing: border-box;
+  font-size: 18px;
+  line-height: 30px;
+  border: 1px solid darkcyan;
+  border-radius: 8px;
+  width: 100px;
+  height: 30px;
+  background-color: rgb(187, 235, 180);
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: fit-content;
+  margin: auto;
+}
+
+input {
+  box-sizing: border-box;
+  height: 30px;
+  width: 300px;
+  border-radius: 5px;
+  border: 1px solid darkcyan;
+  padding: 10px;
+}
+
+input:focus {
+  outline: none;
+}
+
+input:focus:hover {
+  outline: none;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+output {
+  visibility: collapse;
+  margin: 15px auto;
+  display: block;
+  width: 300px;
+  height: 30px;
+  box-sizing: border-box;
+  background-color: rgb(214, 236, 255);
+  line-height: 30px;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+
+output.visible {
+  visibility: visible;
+}
+
+@media screen and (max-width: 850px) {
+  table {
+    width: 95%;
+    word-wrap: break-word;
+  }
+
+  td {
+    padding: 2px;
+  }
+}
+
+@media screen and (max-width: 421px) {
+  tr {
+    display: flex;
+    flex-direction: column;
+  }
+
+  tr:nth-child(2n) {
+    background-color: rgb(210, 255, 255);
+  }
+
+  thead tr {
+    display: none;
+  }
+
+  td {
+    min-height: 50px;
+    background-color: transparent;
+    font-size: 15px;
+  }
+
+  tr td:nth-child(1)::before {
+    content: 'Наименование';
+    background-color: rgb(122, 102, 168);
+  }
+  tr td:nth-child(2)::before {
+    content: 'Семейство';
+  }
+  tr td:nth-child(3)::before {
+    content: 'Использование';
+  }
+  tr td:nth-child(4)::before {
+    content: 'Требование к свету';
+  }
+  tr td:nth-child(5)::before {
+    content: 'Полив';
+  }
+
+  td::before {
+    height: 20px;
+    line-height: 20px;
+    display: block;
+    text-align: center;
+    background-color: darkcyan;
+    font-weight: bold;
+    color: azure;
+    border-radius: 12px;
+  }
+
+}
